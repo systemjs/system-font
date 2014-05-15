@@ -1,0 +1,18 @@
+<!doctype html>
+  <script src="../es6-module-loader/dist/es6-module-loader.js"></script>
+  <script src="../systemjs/dist/system.js"></script>
+  <script>
+    System.paths['*'] = 'https://registry.jspm.io/*.js';
+    System.paths['~:*'] = '*.js';
+    System.paths['github:*'] = 'https://github.jspm.io/*.js';
+    System.paths['cdnjs:*'] = 'https://cdnjs.cloudflare.com/ajax/libs/*.js';
+
+    System.import('#google Exo 2:300 !~:font').then(function() {
+      console.log('loaded');
+    })
+    .catch(function(e) {
+      setTimeout(function() {
+        throw e;
+      })
+    })
+  </script>

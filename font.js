@@ -1,34 +1,43 @@
 var WebFont = require('webfont@1.3.0/webfont');
 
-module.exports = function(name, url, fetch, callback, errback) {
+exports.locate = function(load) {
+  return load.name;
+}
 
-  var o = {};
+exports.fetch = function(load) {
+  return new Promise(function(resolve, reject) {
+    var o = {};
 
-  var fontName = name.split(' ')[0];
-  var params = name.substr(fontName.length + 1).trim();
-  fontName = fontName.trim().substr(1);
+    var fontName = load.address.split(' ')[0];
+    var params = load.address.substr(fontName.length + 1).trim();
+    fontName = fontName.trim().substr(1);
 
-  if (fontName == 'google')
-    o[fontName] = {
-      families: params.split(',')
+    if (fontName == 'google')
+      o[fontName] = {
+        families: params.split(',')
+      };
+    else if (fontName == 'typekit')
+      o[fontName] = {
+        id: params
+      };
+    else if (fontName == 'monotype')
+      o[fontName] = {
+        projectId: params.split(',')[0],
+        version: params.split(',')[1]
+      };
+    else if (fontName == 'fontdeck')
+      o[fontName] = {
+        id: params
+      };
+
+    o.active = function() {
+      resolve('');
     };
-  else if (fontName == 'typekit')
-    o[fontName] = {
-      id: params
-    };
-  else if (fontName == 'monotype')
-    o[fontName] = {
-      projectId: params.split(',')[0],
-      version: params.split(',')[1]
-    };
-  else if (fontName == 'fontdeck')
-    o[fontName] = {
-      id: params
-    };
+    o.inactive = function() {
+      reject();
+    }
 
-  o.active = callback;
-  o.inactive = errback;
-
-  WebFont.load(o);
+    WebFont.load(o);
+  });
 }
 
