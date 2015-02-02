@@ -1,3 +1,25 @@
 {
-  "main": "font"
+  "name": "system-font",
+  "description": "Font loading plugin for SystemJS.",
+  "main": "font",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:guybedford/system-font.git"
+  },
+  "keywords": [
+    "systemjs",
+    "loader"
+  ],
+  "authors": [
+    "Guy Bedford <guybedford@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guybedford/system-font/issues"
+  },
+  "homepage": "https://github.com/guybedford/system-font"
 }
