@@ -1,4 +1,4 @@
-plugin-font
+system-font
 ===========
 
-Google WebFont Loader plugin
+Google WebFont Loader plugin for SystemJS
