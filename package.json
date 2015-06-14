@@ -1,3 +1,6 @@
 {
-  "main": "font"
+  "main": "font",
+  "dependencies": {
+    "webfontloader": "^1.6.3"
+  }
 }

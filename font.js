@@ -1,4 +1,4 @@
-var WebFont = require("webfont");
+var WebFont = require("webfontloader");
 
 exports.locate = function(load) {
   return load.name;
