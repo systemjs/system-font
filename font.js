@@ -17,7 +17,6 @@ exports.fetch = function(load) {
           inactive: function() { reject() }
         };
 
-    fontName = fontName.trim().substr(1);
     config[fontName] = font
 
     switch (fontName) {
