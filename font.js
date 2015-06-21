@@ -1,20 +1,22 @@
-var WebFont = require("webfont");
+var WebFont = require("webfont"),
+    stripDomain = new RegExp("^(.*://[^/]*/)?(.*)$");
 
 exports.locate = function(load) {
-  return load.name;
+  return decodeURI(load.name.match(stripDomain)[2]);
 }
 
 exports.fetch = function(load) {
   return new Promise(function(resolve, reject) {
     var fontName = load.address.split(" ")[0],
-        params = load.address.substr(fontName.length + 1).trim().split(","),
+        params = load.address.substr(fontName.length + 1).split(",").map(function(str) {
+          return str.trim();
+        }),
         font = {},
         config = {
           active: function() { resolve("") },
           inactive: function() { reject() }
         };
 
-    fontName = fontName.trim().substr(1);
     config[fontName] = font
 
     switch (fontName) {
