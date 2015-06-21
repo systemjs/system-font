@@ -1,5 +1,6 @@
 var WebFont = require("webfont"),
     stripDomain = new RegExp("^(.*://[^/]*/)?(.*)$");
+    //                     scheme^ domain^ font^
 
 exports.locate = function(load) {
   return decodeURI(load.name.match(stripDomain)[2]);
