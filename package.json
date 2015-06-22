@@ -1,3 +1,8 @@
 {
-  "main": "font"
+  "main": "font",
+  "jspm": {
+    "dependencies": {
+      "webfont": "github:components/webfontloader@^1.6.3"
+    }
+  }
 }
