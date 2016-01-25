@@ -1,7 +1,11 @@
 {
   "main": "font",
   "author": [
-    "LukeXuan"
+    "guybedford",
+    "dvc94ch",
+    "maxnordlund",
+    "LukeXuan",
+    "And many other potential contributors"
   ],
   "license": "MIT",
   "version": "0.1.1",
