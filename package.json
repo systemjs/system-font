@@ -4,8 +4,9 @@
     "LukeXuan"
   ],
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "jspm": {
+	"registry": "jspm",
     "dependencies": {
       "webfont": "github:components/webfontloader@^1.6.3"
     },
