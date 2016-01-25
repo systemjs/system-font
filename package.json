@@ -1,8 +1,18 @@
 {
   "main": "font",
+  "author": [
+    "LukeXuan"
+  ],
+  "license": "MIT",
+  "version": "0.1.0",
   "jspm": {
     "dependencies": {
       "webfont": "github:components/webfontloader@^1.6.3"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
     }
   }
 }
