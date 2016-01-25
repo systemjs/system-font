@@ -6,7 +6,12 @@
   "license": "MIT",
   "version": "0.1.1",
   "jspm": {
-	"registry": "jspm",
+    "registry": "jspm",
+    "directories": {
+      "baseURL": "test",
+      "packages": "jspm_packages"
+    },
+    "configFile": "config.js",
     "dependencies": {
       "webfont": "github:components/webfontloader@^1.6.3"
     },
